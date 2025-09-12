@@ -93,6 +93,29 @@
 
     /* Dark mode toggle of CSS variables */
     :root.dark{--brand:#69a9d8;--accent:#f3b24a;--muted:#cbd6df}
+	  
+	  /* Clientele grid */
+.client-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1rem;
+  align-items:center;
+  justify-items:center;
+}
+@media(min-width:640px){ .client-grid{ grid-template-columns:repeat(4,1fr); } }
+@media(min-width:1000px){ .client-grid{ grid-template-columns:repeat(6,1fr); } }
+
+.client-grid picture, .client-grid img {
+  padding:.5rem;
+  border-radius:8px;
+  background:#fff;
+  box-shadow:0 6px 18px rgba(2,27,70,0.04);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.client-grid picture:hover, .client-grid img:hover {
+  transform:translateY(-4px);
+  box-shadow:0 12px 24px rgba(2,27,70,0.08);
+}
   </style>
 </head>
 <body>
@@ -263,6 +286,66 @@
         </div>
       </div>
     </section>
+	  <!-- Clientele -->
+<section id="clientele" aria-labelledby="clientele-title">
+  <div class="container">
+    <h2 id="clientele-title" class="section-title">Our Clients</h2>
+    <p class="lead-section">Some of the reputed organisations we proudly serve.</p>
+
+    <div class="client-grid" style="margin-top:1rem">
+      <picture>
+        <source srcset="/photos/clientele/client-bccl-300.webp" type="image/webp">
+        <img src="/photos/clientele/client-bccl-300.jpg" alt="BCCL" loading="lazy" style="height:50px;object-fit:contain;">
+      </picture>
+
+      <picture>
+        <source srcset="/photos/clientele/client-bfcl-300.webp" type="image/webp">
+        <img src="/photos/clientele/client-bfcl-300.jpg" alt="BFCL" loading="lazy" style="height:50px;object-fit:contain;">
+      </picture>
+
+      <picture>
+        <source srcset="/photos/clientele/client-cmpdi-300.webp" type="image/webp">
+        <img src="/photos/clientele/client-cmpdi-300.jpg" alt="CMPDI" loading="lazy" style="height:50px;object-fit:contain;">
+      </picture>
+
+      <picture>
+        <source srcset="/photos/clientele/client-cpwd-300.webp" type="image/webp">
+        <img src="/photos/clientele/client-cpwd-300.jpg" alt="CPWD" loading="lazy" style="height:50px;object-fit:contain;">
+      </picture>
+
+      <picture>
+        <source srcset="/photos/clientele/client-eslsteel-300.webp" type="image/webp">
+        <img src="/photos/clientele/client-eslsteel-300.jpg" alt="ESL Steel" loading="lazy" style="height:50px;object-fit:contain;">
+      </picture>
+
+      <picture>
+        <source srcset="/photos/clientele/client-hindalco-300.webp" type="image/webp">
+        <img src="/photos/clientele/client-hindalco-300.jpg" alt="Hindalco" loading="lazy" style="height:50px;object-fit:contain;">
+      </picture>
+
+      <picture>
+        <source srcset="/photos/clientele/client-mecon-300.webp" type="image/webp">
+        <img src="/photos/clientele/client-mecon-300.jpg" alt="Mecon Ltd." loading="lazy" style="height:50px;object-fit:contain;">
+      </picture>
+
+      <picture>
+        <source srcset="/photos/clientele/client-medicant-300.webp" type="image/webp">
+        <img src="/photos/clientele/client-medicant-300.jpg" alt="Medicant" loading="lazy" style="height:50px;object-fit:contain;">
+      </picture>
+
+      <picture>
+        <source srcset="/photos/clientele/client-rkscpl-300.webp" type="image/webp">
+        <img src="/photos/clientele/client-rkscpl-300.jpg" alt="RKSCPL" loading="lazy" style="height:50px;object-fit:contain;">
+      </picture>
+
+      <picture>
+        <source srcset="/photos/clientele/client-ushamartin-300.webp" type="image/webp">
+        <img src="/photos/clientele/client-ushamartin-300.jpg" alt="Usha Martin" loading="lazy" style="height:50px;object-fit:contain;">
+      </picture>
+    </div>
+  </div>
+</section>
+
 
     <!-- Contact -->
     <section id="contact" aria-labelledby="contact-title">
@@ -366,6 +449,7 @@
   </script>
 </body>
 </html>
+
 
 
 
