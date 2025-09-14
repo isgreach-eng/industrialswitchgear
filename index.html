@@ -116,6 +116,62 @@
   transform:translateY(-4px);
   box-shadow:0 12px 24px rgba(2,27,70,0.08);
 }
+/* Floating social bar (bottom-right) */
+.social-bar {
+  position:fixed;
+  right:18px;
+  bottom:20px;
+  z-index:999;
+  display:flex;
+  flex-direction:column;
+  gap:0.6rem;
+  align-items:flex-end;
+}
+
+.social-bar a {
+  display:inline-flex;
+  align-items:center;
+  gap:0.6rem;
+  padding:0.45rem 0.7rem;
+  border-radius:999px;
+  text-decoration:none;
+  background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.92));
+  color:var(--brand);
+  box-shadow:0 8px 20px rgba(2,27,70,0.08);
+  font-weight:700;
+  font-size:0.93rem;
+  transition:transform .12s ease, box-shadow .12s ease;
+  backdrop-filter: blur(6px);
+}
+
+/* icon circle on left of label */
+.social-bar a .icon {
+  width:34px;height:34px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;
+  background:transparent;
+}
+
+/* hover */
+.social-bar a:hover { transform:translateY(-4px); box-shadow:0 18px 40px rgba(2,27,70,0.12); }
+
+/* small labels appear on hover; default keep compact (icon only) */
+.social-bar a .label { display:none; white-space:nowrap; color:var(--brand); }
+
+/* show label on hover for desktop */
+@media (hover: hover) and (min-width:640px) {
+  .social-bar a { padding:0.45rem 0.9rem; }
+  .social-bar a .label { display:inline-block; margin-left:0.25rem; }
+}
+
+/* reduce visual weight in dark mode */
+:root.dark .social-bar a { background:rgba(255,255,255,0.04); color:var(--muted); }
+:root.dark .social-bar a .label { color:var(--muted); }
+
+/* responsive: hide on very small phones if you prefer */
+@media (max-width:420px) {
+  .social-bar { right:10px; bottom:10px; gap:0.45rem; }
+  /* keep only icons (no labels) */
+  .social-bar a .label { display:none !important; }
+}
   </style>
 </head>
 <body>
@@ -371,7 +427,6 @@
         </div>
       </div>
     </section>
-
     <!-- Footer -->
     <footer>
       <div class="container">
@@ -450,8 +505,47 @@
       lb.addEventListener('click', (ev)=>{ if(ev.target === lb) closeLB(); });
     })();
   </script>
+	<!-- Floating Social Media Bar -->
+<div class="social-bar" aria-hidden="false">
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/isg.reach" target="_blank" rel="noopener noreferrer" aria-label="Instagram — Industrial Switchgear">
+    <span class="icon" aria-hidden="true">
+      <!-- Instagram SVG (small) -->
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.2"/><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.2"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
+    </span>
+    <span class="label">Instagram</span>
+  </a>
+
+  <!-- Facebook -->
+  <a href="https://www.facebook.com/profile.php?id=61580293420530" target="_blank" rel="noopener noreferrer" aria-label="Facebook — Industrial Switchgear">
+    <span class="icon" aria-hidden="true">
+      <!-- Facebook SVG -->
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 3h3v4h-3v14h-4V7H9V3h6z" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
+    </span>
+    <span class="label">Facebook</span>
+  </a>
+
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/company/108700091/admin/dashboard" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn — Industrial Switchgear">
+    <span class="icon" aria-hidden="true">
+      <!-- LinkedIn SVG -->
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="20" height="18" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M6 10v7M6 7v.01M10 17v-4a1.5 1.5 0 0 1 1.5-1.5H13" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
+    </span>
+    <span class="label">LinkedIn</span>
+  </a>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/917654002375?text=Hi%20Industrial%20Switchgear%20—%20I%20would%20like%20to%20inquire" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp — Industrial Switchgear">
+    <span class="icon" aria-hidden="true">
+      <!-- WhatsApp SVG -->
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 14.5a6.5 6.5 0 1 0-1.84 4.2L22 22l-3.3-0.88A6.5 6.5 0 0 0 20 14.5z" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
+    </span>
+    <span class="label">WhatsApp</span>
+  </a>
+</div>
 </body>
 </html>
+
 
 
 
