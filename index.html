@@ -116,6 +116,18 @@
   transform:translateY(-4px);
   box-shadow:0 12px 24px rgba(2,27,70,0.08);
 }
+	  .carousel { display:flex; align-items:center; gap:1rem; position:relative; margin-top:1rem; }
+.carousel-viewport { overflow:hidden; flex:1 }
+.carousel-track { display:flex; gap:1rem; transition:transform .35s ease; padding:0; margin:0; list-style:none; }
+.carousel-item { flex:0 0 calc(100% / 3 - 0.667rem); display:flex; align-items:center; justify-content:center; padding:.6rem; background:#fff; border-radius:8px; box-shadow:0 8px 20px rgba(2,27,70,0.04); }
+.carousel-item img { height:56px; width:auto; display:block; }
+
+/* arrows */
+.carousel-btn { background:var(--brand); color:#fff; border:0; width:40px; height:40px; border-radius:8px; cursor:pointer; font-size:1.25rem; display:flex; align-items:center; justify-content:center; }
+
+/* responsive: show fewer/more logos */
+@media (max-width:960px) { .carousel-item { flex:0 0 calc(100% / 2 - 0.5rem); } }
+@media (max-width:640px) { .carousel-item { flex:0 0 calc(100% - 0.5rem); } }
 /* Floating social bar (icon-only) */
 .social-bar {
   position:fixed;
@@ -348,67 +360,52 @@
         </div>
       </div>
     </section>
-	  <!-- Clientele -->
-<section id="clientele" aria-labelledby="clientele-title">
+	  <!-- Clientele carousel -->
+<section id="clientele-carousel" aria-labelledby="clientele-title">
   <div class="container">
     <h2 id="clientele-title" class="section-title">Our Clients</h2>
-    <p class="lead-section">Some of the reputed organisations we proudly serve.</p>
+    <p class="lead-section">Some of the organisations we proudly serve.</p>
 
-    <div class="client-grid" style="margin-top:1rem">
-      <picture>
-        <source srcset="/photos/clientele/client-bccl-300.webp" type="image/webp">
-        <img src="/photos/clientele/client-bccl-300.jpg" alt="BCCL" loading="lazy" style="height:50px;object-fit:contain;">
-      </picture>
-
-      <picture>
-        <source srcset="/photos/clientele/client-bfcl-300.webp" type="image/webp">
-        <img src="/photos/clientele/client-bfcl-300.jpg" alt="BFCL" loading="lazy" style="height:50px;object-fit:contain;">
-      </picture>
-
-      <picture>
-        <source srcset="/photos/clientele/client-cmpdi-300.webp" type="image/webp">
-        <img src="/photos/clientele/client-cmpdi-300.jpg" alt="CMPDI" loading="lazy" style="height:50px;object-fit:contain;">
-      </picture>
-
-      <picture>
-        <source srcset="/photos/clientele/client-cpwd-300.webp" type="image/webp">
-        <img src="/photos/clientele/client-cpwd-300.jpg" alt="CPWD" loading="lazy" style="height:50px;object-fit:contain;">
-      </picture>
-
-      <picture>
-        <source srcset="/photos/clientele/client-eslsteel-300.webp" type="image/webp">
-        <img src="/photos/clientele/client-eslsteel-300.jpg" alt="ESL Steel" loading="lazy" style="height:50px;object-fit:contain;">
-      </picture>
-
-      <picture>
-        <source srcset="/photos/clientele/client-hindalco-300.webp" type="image/webp">
-        <img src="/photos/clientele/client-hindalco-300.jpg" alt="Hindalco" loading="lazy" style="height:50px;object-fit:contain;">
-      </picture>
-
-      <picture>
-        <source srcset="/photos/clientele/client-mecon-300.webp" type="image/webp">
-        <img src="/photos/clientele/client-mecon-300.jpg" alt="Mecon Ltd." loading="lazy" style="height:50px;object-fit:contain;">
-      </picture>
-
-      <picture>
-        <source srcset="/photos/clientele/client-medicant-300.webp" type="image/webp">
-        <img src="/photos/clientele/client-medicant-300.jpg" alt="Medicant" loading="lazy" style="height:50px;object-fit:contain;">
-      </picture>
-
-      <picture>
-        <source srcset="/photos/clientele/client-rkscpl-300.webp" type="image/webp">
-        <img src="/photos/clientele/client-rkscpl-300.jpg" alt="RKSCPL" loading="lazy" style="height:50px;object-fit:contain;">
-      </picture>
-
-      <picture>
-        <source srcset="/photos/clientele/client-ushamartin-300.webp" type="image/webp">
-        <img src="/photos/clientele/client-ushamartin-300.jpg" alt="Usha Martin" loading="lazy" style="height:50px;object-fit:contain;">
-      </picture>
+    <div class="carousel" aria-roledescription="carousel">
+      <button class="carousel-btn prev" aria-label="Previous clients">‹</button>
+      <div class="carousel-viewport">
+        <ul class="carousel-track">
+          <li class="carousel-item">
+            <picture><source srcset="/photos/clientele/client-bccl-300.webp" type="image/webp"><img src="/photos/clientele/client-bccl-300.jpg" alt="BCCL"></picture>
+          </li>
+          <li class="carousel-item">
+            <picture><source srcset="/photos/clientele/client-bfcl-300.webp" type="image/webp"><img src="/photos/clientele/client-bfcl-300.jpg" alt="BFCL"></picture>
+          </li>
+          <li class="carousel-item">
+            <picture><source srcset="/photos/clientele/client-cmpdi-300.webp" type="image/webp"><img src="/photos/clientele/client-cmpdi-300.jpg" alt="CMPDI"></picture>
+          </li>
+          <li class="carousel-item">
+            <picture><source srcset="/photos/clientele/client-cpwd-300.webp" type="image/webp"><img src="/photos/clientele/client-cpwd-300.jpg" alt="CPWD"></picture>
+          </li>
+          <li class="carousel-item">
+            <picture><source srcset="/photos/clientele/client-eslsteel-300.webp" type="image/webp"><img src="/photos/clientele/client-eslsteel-300.jpg" alt="ESL Steel"></picture>
+          </li>
+          <li class="carousel-item">
+            <picture><source srcset="/photos/clientele/client-hindalco-300.webp" type="image/webp"><img src="/photos/clientele/client-hindalco-300.jpg" alt="Hindalco"></picture>
+          </li>
+          <li class="carousel-item">
+            <picture><source srcset="/photos/clientele/client-mecon-300.webp" type="image/webp"><img src="/photos/clientele/client-mecon-300.jpg" alt="Mecon"></picture>
+          </li>
+          <li class="carousel-item">
+            <picture><source srcset="/photos/clientele/client-medicant-300.webp" type="image/webp"><img src="/photos/clientele/client-medicant-300.jpg" alt="Medicant"></picture>
+          </li>
+          <li class="carousel-item">
+            <picture><source srcset="/photos/clientele/client-rkscpl-300.webp" type="image/webp"><img src="/photos/clientele/client-rkscpl-300.jpg" alt="RKSCPL"></picture>
+          </li>
+          <li class="carousel-item">
+            <picture><source srcset="/photos/clientele/client-ushamartin-300.webp" type="image/webp"><img src="/photos/clientele/client-ushamartin-300.jpg" alt="Usha Martin"></picture>
+          </li>
+        </ul>
+      </div>
+      <button class="carousel-btn next" aria-label="Next clients">›</button>
     </div>
   </div>
 </section>
-
-
     <!-- Contact -->
     <section id="contact" aria-labelledby="contact-title">
       <div class="container">
@@ -559,8 +556,65 @@
     </span>
   </a>
 </div>
+	<script>
+(function(){
+  const track = document.querySelector('.carousel-track');
+  const items = Array.from(track.children);
+  const prev = document.querySelector('.carousel-btn.prev');
+  const next = document.querySelector('.carousel-btn.next');
+  let index = 0;
+  let visible = getVisibleCount();
+
+  function getVisibleCount(){
+    const w = window.innerWidth;
+    if(w < 640) return 1;
+    if(w < 960) return 2;
+    return 3;
+  }
+
+  function update(){
+    visible = getVisibleCount();
+    const itemWidth = items[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).gap || 16);
+    const offset = index * (itemWidth);
+    track.style.transform = `translateX(-${offset}px)`;
+  }
+
+  window.addEventListener('resize', update);
+
+  next.addEventListener('click', ()=> {
+    index = Math.min(index + 1, items.length - visible);
+    update();
+  });
+  prev.addEventListener('click', ()=> {
+    index = Math.max(index - 1, 0);
+    update();
+  });
+
+  // autoplay
+  let autoplayId;
+  function startAuto(){ autoplayId = setInterval(()=>{ index = (index + 1) % (items.length - visible + 1); update(); }, 3000); }
+  function stopAuto(){ clearInterval(autoplayId); }
+
+  track.parentElement.addEventListener('mouseenter', stopAuto);
+  track.parentElement.addEventListener('mouseleave', startAuto);
+  startAuto();
+
+  // swipe support
+  let startX = 0, dx = 0, isDown = false;
+  track.addEventListener('pointerdown', e => { isDown=true; startX = e.clientX; track.setPointerCapture(e.pointerId); stopAuto(); });
+  track.addEventListener('pointermove', e => { if(!isDown) return; dx = e.clientX - startX; track.style.transform = `translateX(${ -index * items[0].getBoundingClientRect().width + dx }px)`; });
+  track.addEventListener('pointerup', e => {
+    isDown=false;
+    if(Math.abs(dx) > 50){ if(dx < 0) index = Math.min(index + 1, items.length - visible); else index = Math.max(index - 1, 0); }
+    dx = 0;
+    update();
+    startAuto();
+  });
+})();
+</script>
 </body>
 </html>
+
 
 
 
